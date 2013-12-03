@@ -7,6 +7,7 @@ package com.example.untitled;
  * Time: 19:14
  * To change this template use File | Settings | File Templates.
  */
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -27,20 +28,17 @@ public class myAdapter extends BaseAdapter {
     ArrayList<RssItem> objects;
 
     @Override
-    public Object getItem(int position)
-    {
+    public Object getItem(int position) {
         return objects.get(position);
     }
 
     @Override
-    public long getItemId(int position)
-    {
+    public long getItemId(int position) {
         return position;
     }
 
     @Override
-    public int getCount()
-    {
+    public int getCount() {
         return objects.size();
     }
 
@@ -65,11 +63,12 @@ public class myAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View view = convertView;
-        if(view == null)
+        if (view == null)
             view = lInflater.inflate(R.layout.item_list, parent, false);
 
-        RssItem f = (RssItem)getItem(position);
+        RssItem f = (RssItem) getItem(position);
         ((TextView) view.findViewById(R.id.date)).setText(f.getPubDate());
+
         ((TextView) view.findViewById(R.id.title)).setText(f.getTitle());
         ((TextView) view.findViewById(R.id.description)).setText(f.getDescription());
         return view;

@@ -6,7 +6,7 @@
         >
     <TextView
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:layout_height="wrap_content"
             android:text="can't connecting to internet"
             android:id="@+id/textView" android:layout_gravity="center" android:visibility="invisible"
             android:textSize="40dp"/>

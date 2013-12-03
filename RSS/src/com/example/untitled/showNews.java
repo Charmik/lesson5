@@ -19,7 +19,7 @@ public class showNews extends Activity {
         setContentView(R.layout.news);
         Intent intent = getIntent();
         String link = intent.getStringExtra("link");
-        WebView webView = (WebView)findViewById(R.id.webView);
+        WebView webView = (WebView) findViewById(R.id.webView);
         webView.loadUrl(link);
     }
 }

@@ -22,23 +22,19 @@ public class RssItem {
         this.link = link;
     }
 
-    public String getTitle()
-    {
+    public String getTitle() {
         return this.title;
     }
 
-    public String getLink()
-    {
+    public String getLink() {
         return this.link;
     }
 
-    public String getDescription()
-    {
+    public String getDescription() {
         return this.description;
     }
 
-    public String getPubDate()
-    {
+    public String getPubDate() {
         return String.format("%02d", this.pubDate.getDay()) + "." +
                 String.format("%02d", this.pubDate.getMonth()) + "." +
                 (this.pubDate.getYear() + 1900) + " " +
