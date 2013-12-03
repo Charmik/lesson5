@@ -14,7 +14,7 @@
             </intent-filter>
         </activity>
         <activity
-                android:name=".showNews"
+                android:name=".ShowNews"
                 />
     </application>
 </manifest>

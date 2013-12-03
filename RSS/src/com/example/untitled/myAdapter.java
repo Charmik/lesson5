@@ -22,7 +22,7 @@ import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class myAdapter extends BaseAdapter {
+public class MyAdapter extends BaseAdapter {
     Context ctx;
     LayoutInflater lInflater;
     ArrayList<RssItem> objects;
@@ -42,22 +42,10 @@ public class myAdapter extends BaseAdapter {
         return objects.size();
     }
 
-    myAdapter(Context context, ArrayList<RssItem> products) {
+    MyAdapter(Context context, ArrayList<RssItem> products) {
         ctx = context;
         objects = products;
         lInflater = (LayoutInflater) ctx.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-    }
-
-    public String getTitle(int position) {
-        return objects.get(position).getTitle();
-    }
-
-    public String getDescription(int position) {
-        return objects.get(position).getDescription();
-    }
-
-    public String getDate(int position) {
-        return objects.get(position).getPubDate();
     }
 
     @Override

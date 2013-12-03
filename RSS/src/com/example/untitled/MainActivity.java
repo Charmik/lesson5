@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.AndroidCharacter;
 import android.view.View;
 import android.widget.*;
 import org.w3c.dom.Document;
@@ -18,12 +17,11 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.concurrent.ExecutionException;
 
 public class MainActivity extends Activity {
 
-    public static TextView textView;
-    public static ListView lv;
+    protected static TextView textView;
+    protected static ListView lv;
     ArrayList<RssItem> data = new ArrayList<RssItem>();
 
     @Override
@@ -33,19 +31,15 @@ public class MainActivity extends Activity {
         textView = (TextView) findViewById(R.id.textView);
         textView.setVisibility(View.GONE);
         lv = (ListView) findViewById(R.id.listView);
-
         String str = "http://news.rambler.ru/rss/scitech/";
-        getXml xml = new getXml(str);
-
+        GetXml xml = new GetXml(str);
         xml.execute();
-
-
     }
 
-    public class getXml extends AsyncTask<Void, Void, ArrayList<RssItem>> {
+    public class GetXml extends AsyncTask<Void, Void, ArrayList<RssItem>> {
         String link;
 
-        getXml(String link) {
+        GetXml(String link) {
             this.link = link;
         }
 
@@ -55,7 +49,7 @@ public class MainActivity extends Activity {
             if (result.size() == 0) {
                 MainActivity.textView.setVisibility(View.VISIBLE);
             }
-            myAdapter adapter = new myAdapter(MainActivity.this, result);
+            MyAdapter adapter = new MyAdapter(MainActivity.this, result);
             lv.setAdapter(adapter);
             final ArrayList<RssItem> finalData = result;
             final ArrayList<RssItem> finalData1 = result;
@@ -63,7 +57,7 @@ public class MainActivity extends Activity {
                 @Override
                 public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
                     RssItem rssItem = finalData.get(position);
-                    Intent intent = new Intent(MainActivity.this, showNews.class);
+                    Intent intent = new Intent(MainActivity.this, ShowNews.class);
                     intent.putExtra("link", finalData1.get(position).getLink());
                     startActivity(intent);
                 }

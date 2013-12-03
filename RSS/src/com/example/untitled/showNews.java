@@ -3,7 +3,6 @@ package com.example.untitled;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Browser;
 import android.webkit.WebView;
 
 /**
@@ -13,7 +12,7 @@ import android.webkit.WebView;
  * Time: 3:29
  * To change this template use File | Settings | File Templates.
  */
-public class showNews extends Activity {
+public class ShowNews extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.news);
